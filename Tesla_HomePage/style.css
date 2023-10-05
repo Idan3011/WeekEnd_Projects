@@ -117,15 +117,15 @@ video {
     display:flex;
     align-items: center;
     justify-content: center;
-    text-size-adjust: 100%;
 }
 
 #container1 ul li a {
     display: block;
     padding: 10px;
-    padding-left: 25px;
+    padding-left: 15px;
     text-align: center;
     text-size-adjust: 100%;
+    margin-right: 17.5px;
 }
 
 #container1 ul li a:hover {
