@@ -41,7 +41,7 @@ if(userName.value.length<3){
         getLocalStorage('UserName', userName.value);
         getLocalStorage('Email', email.value);
         getLocalStorage('password', password.value);
-        window.location = './main.html';
+        window.location = './index.html';
 
     }  
     

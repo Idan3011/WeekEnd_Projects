@@ -30,7 +30,7 @@ let flightArr = [];
 
 returnMain.addEventListener('click', () => {
     if(returnMain){
-        window.location = './main.html'
+        window.location = './index.html'
     }
 })
 
