@@ -89,10 +89,9 @@ const flights = [
     let sortFlight = false;
     let newFlightObj ={};
     
-//...........add Event Listener`s...........//
+//.................add Event Listener`s.................//
 
 
-//....add event for loading the cart webPage after a user click on it.....//
 
 
     document.addEventListener('DOMContentLoaded', () => {        
@@ -109,9 +108,7 @@ const flights = [
         }
     })
 
-    // addFlight.addEventListener('click', () => {
-
-    // })
+   
     newFlightForm.addEventListener('submit', (e) => {
         e.preventDefault()
         
@@ -171,7 +168,7 @@ const flights = [
         }
     })
     
-//...................funcuallity...................//
+//..................Difine Function`s...................//
 
 
 function createFlightCard(flight){

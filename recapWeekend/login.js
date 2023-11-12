@@ -57,7 +57,7 @@ if(userName.value.length<3){
 
 
 
-//..............funcuallity..............//
+//.................Define Function`s.................//
 
 function showError(input, massage){
     const errorDiv = document.getElementById(input.id+'Error');

@@ -25,7 +25,9 @@
         let getFlight = localStorage.getItem('cartFlight');
         const getFlightObject = JSON.parse(getFlight);
         let flightArr = [];
-//...........add Event Listener`s...........//
+
+        
+//...............add Event Listener`s..............//
 
 
             returnMain.addEventListener('click', () => {
@@ -96,7 +98,7 @@
                         
                     }
                 })
-            //...........funcuality...........//
+//................Difine Function`s...................//
 
             function objToArr(obj){
                 obj.forEach(item =>  item.forEach(element =>
