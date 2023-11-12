@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/cart.css">
+    <title>cart | Flight Scanner</title>
+</head>
+<body>
+    <div id="navbar">
+        <ul>
+            <li><button id="log-out">Return to Main Page</button></li>
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            <li><button id="booking">Book A Flight!</button></li>
+            <i class="fa-solid fa-plane-circle-check fa-beat-fade"></i>
+        </ul>
+    </div>
+    <div id="flight-container">
+    </div>
+    <h1>Your Booking Details</h1>
+    <div id="list-container">
+        <ul>
+            <li><button id="num-of-passngers">Select Number of Passnager's</button></li>
+        <li><button id="change-flight-details"> Select date's for your travelling</button></li>
+        </ul>
+    </div>
+    <div id="popup">
+        <button id="close">X</button>
+        <h3>add Passangers</h3>
+        <form id="addPassengers">
+            <label for="flight-from-search">Flight From:</label>
+            <input type="text" id="flight-from-search" name="flight-from-search" required><br>
+            <label for="flight-to-search">Flight To:</label>
+            <input type="text" id="flight-to-search" name="flight-to-search" required><br>
+            <label for="passenger">Passenger's</label>
+            <input type="number" id="passenger" name="passenger" required><br>
+            <input type="submit" value="CONFIRM"></input>
+        </form>
+    </div>
+
+    <div id="ticket-popup">
+        <h4>Your Flight details:</h4><br><section>Plsease comfrim Your reservation.</section>
+        <div id="text-container">
+
+        </div>
+        <button id="close-popup">X</button>
+        <button id="payup">Pay</button>
+    </div>
+    <form id="change-fly-detail">
+        <h3>Change dates of travel</h3>
+        <button id="close-date-form">X</button>
+        <label for="flight-from">Flight From:</label>
+        <input type="text" id="flight-from" name="flight-from" required><br>
+        <label for="flight-to">Flight To:</label>
+        <input type="text" id="flight-to" name="flight-to" required><br>
+        <label for="flight-depart">Flight Depart:</label>
+        <input type="date" id="flight-depart" name="flight-depart" value="2023-11-12" min="2023-11-12" max="2030-12-31" required><br>
+        <label for="flight-arrive">Flight Arrive:</label>
+        <input type="date" id="flight-arrive" name="flight-arrive" value="2023-11-13" min="2023-11-13" max="2030-12-31" required><br>
+        <input type="submit" value="CONFIRM"></input>
+      </form>
+    <script src="https://kit.fontawesome.com/26e587cf03.js" crossorigin="anonymous"></script>
+    <script src="../cart.js"></script>
+</body>
+</html>

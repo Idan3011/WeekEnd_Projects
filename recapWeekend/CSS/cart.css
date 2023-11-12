@@ -1,0 +1,353 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    left: 0;
+    top:0;
+}
+
+body {
+    background: #b6aeae;;
+}
+
+#navbar {
+    background: rgb(8,2,130);
+    background: linear-gradient(14deg, rgba(8,2,130,0.9922093837535014) 35%, rgba(28,50,154,1) 57%, rgba(13,19,168,1) 100%);
+    display: flex;
+    position: fixed;
+    width: 100%;
+    height: 3rem;
+    flex-direction: row;
+    z-index: 1;
+}
+
+ul {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: center;
+}
+
+button#log-out {
+    position: absolute;
+    margin-left: 89%;
+    width: 4rem;
+    height: 2rem;
+    background: inherit;
+    border-style: none;
+    cursor: pointer;
+    background: #2c5ed1;
+    border-radius: 0.5rem;
+    font-family: monospace;
+    font-size: 0.7rem;
+    top: 17%;
+    padding: 0 0.5rem;
+    width: 7rem;
+    letter-spacing: 0.1rem;
+    text-align: left;
+}
+
+ul li{
+    list-style: none;
+}
+
+#flight-container {
+    position: absolute;
+    display: grid;
+    left: 1%;
+    top: 28%;
+    width: 99%;
+    min-height: 69vh;
+    align-content: space-evenly;
+    grid-template-columns: repeat(auto-fill, 19rem);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0rem;
+    grid-row-gap: 0.1rem;
+}
+
+
+
+button#booking{
+    position: absolute;
+    width: 6rem;
+    height: 2rem;
+    background: inherit;
+    border-style: none;
+    cursor: pointer;
+    background: #2c5ed1;
+    border-radius: 0.5rem;
+    font-family: monospace;
+    font-size: 0.7rem;
+    margin-left: 2%;
+    top: 17%;
+    letter-spacing: 0.05rem;
+    text-align: right;
+    padding: 0 0.2rem;
+}
+
+#booking:hover, #log-out:hover{
+    background-color: #3d66c4;
+    transform: scale(103%,105%);
+    transition: 0.1s;
+}
+
+i.fa-solid, i.fa-magnifying-glass{
+    position: absolute;
+    left: 62.5%;
+    top: 13.7%;
+    cursor: pointer;
+}
+
+i.fa-plane-circle-check, i.fa-beat-fade::before{
+    position: absolute;
+    left: 2.4%;
+    top: 31.7%;
+    z-index: 1;
+    cursor: pointer;
+}
+
+i.fa-arrow-right-from-bracket{
+    position: absolute;
+    left: 11%;
+    left: 95.5%;
+    top: 34%;
+    cursor: pointer;
+}
+
+.card {
+    position: relative;
+    width: 17rem;
+    height: 10rem;
+    border: 0.05rem solid #e5e9f0;
+    border-radius: 0.7rem;
+    box-shadow: 0px 4px 9px 3px #333;
+    list-style: none;
+    margin-top: 1rem;
+    line-height: 1.7rem;
+    letter-spacing: 0.1rem;
+    background: #e5e9f0;
+    left: 0;
+    cursor: pointer;
+    text-align: left;
+}
+
+.card:hover{
+    background: #d1d5de ;
+    transform: scale(103%, 105%);
+    transition: 0.1s;
+}
+
+p {
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+h1 {
+    position: absolute;
+    top: 12%;
+    left: 36%;
+    border-bottom: 0.2rem solid black;
+    width: 22rem;
+    text-align: center;
+    font-family: 'FontAwesome';
+    font-size: 1.4rem;
+    letter-spacing: 0.1rem;
+}
+
+#list-container{
+    position: absolute;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: center;
+    left: 50%;
+    top: 20%;
+}
+
+ul {
+    list-style: none;
+}
+
+button#num-of-passngers{
+    position: absolute;
+    margin-left: 1rem;
+    width: 9rem;
+    height: 2.4rem;
+    border-radius: 0.5rem;
+    background: initial;
+    border: 0.1rem solid initial;
+    border: 0.09rem solid #333;
+    cursor: pointer;
+    font-size: 1rem;
+    letter-spacing: 0.05rem;
+    font-family: 'Merriweather Sans';
+    box-shadow: 0px 4px 9px 3px #333;
+}
+
+button#change-flight-details {
+    position: absolute;
+    margin-left: -11rem;
+    width: 9rem;
+    height: 2.4rem;
+    border-radius: 0.5rem;
+    background: initial;
+    border: 0.1rem solid initial;
+    border: 0.09rem solid #333;
+    cursor: pointer;
+    font-size: 1rem;
+    letter-spacing: 0.05rem;
+    font-family: 'Merriweather Sans';
+    box-shadow: 0px 4px 9px 3px #333;
+}
+
+button#num-of-passngers:hover, button#change-flight-details:hover, button#payup:hover {
+    background-color: #dfd0d0;
+    transform: scale(103%, 105%);
+    transition: 0.1s;
+}
+
+#popup{
+    position: absolute;
+    left: 34%;
+    top: 15%;
+    width: 23rem;
+    height: 16rem;
+    border: 0.1rem solid #f7f7f7f7;
+    background: #f7f7f7f7;
+    border-radius: 0.5rem;
+    text-align: center;
+    transform: scale(1.1);
+    display: flex;
+    display: none;
+}
+form#change-fly-detail{
+position: absolute;
+    left: 34%;
+    top: 19%;
+    width: 23rem;
+    height: 23rem;
+    border: 0.1rem solid #f7f7f7f7;
+    background: #f7f7f7f7;
+    border-radius: 0.5rem;
+    text-align: center;
+    transform: scale(1.3);
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 0px;
+    justify-content: space-between;
+    align-items: center;
+    display: none;
+}
+
+#ticket-popup {
+    position: absolute;
+    left: 30%;
+    top: 15%;
+    width: 26rem;
+    height: 23rem;
+    border: 0.1rem solid #f7f7f7f7;
+    background: #f7f7f7e3;
+    border-radius: 0.5rem;
+    text-align: center;
+    transform: scale(1.1);
+    display: none;
+}
+
+button#close, button#close-popup, button#close-date-form {
+    position: absolute;
+    left: 90%;
+    font-size: 1.6rem;
+    border: none;
+    background: #f3f3f3f3;
+    cursor: pointer;
+    background: #df1414c7;
+    border-radius: 1.6rem;
+    width: 1.7rem;
+    height: 1.7rem;
+    text-align: center;
+    top: 2%;
+    z-index: 1;
+}
+
+
+
+
+#addPassengers {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-between;
+    top: 16%;
+    left: 25%;
+}
+
+
+
+h3, h4{
+    position: absolute;
+    left: 20%;
+    top: 4%;
+    letter-spacing: 0.1rem;
+    font-family: 'FontAwesome';
+    border-bottom: 0.1rem solid black;
+    color: black;
+}
+
+h4 {
+    top: 4%;
+    left: 14%;
+}
+
+section {
+    position: absolute;
+    top: 14%;
+    left: 11%;
+    font-family: system-ui;
+    font-size: 1rem;
+    letter-spacing: 0.05rem;
+}
+
+#payup{
+    position: absolute;
+    margin-left: -11rem;
+    width: 9rem;
+    height: 2.4rem;
+    border-radius: 0.5rem;
+    background: initial;
+    border: 0.1rem solid initial;
+    border: 0.09rem solid #333;
+    cursor: pointer;
+    font-size: 1rem;
+    letter-spacing: 0.05rem;
+    font-family: 'Merriweather Sans';
+    box-shadow: 0px 4px 9px 3px #333;
+    left: 74%;
+    top: 73%;
+}
+
+#text-container {
+    position: absolute;
+    top: 22%;
+    left: 17%;
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    border: 0.1rem solid black;
+    width: 15rem;
+    height: 11.1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0px 4px 9px 3px #333;
+}
+
+form#change-fly-detail h3 {
+    position: absolute;
+    left: 8%;
+    font-size: 1.1rem;
+    top: 3%;
+}
+

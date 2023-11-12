@@ -1,0 +1,312 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    left: 0;
+    top:0;
+}
+
+body {
+    background: #b6aeae;;
+}
+
+#navbar {
+    background: rgb(8,2,130);
+    background: linear-gradient(14deg, rgba(8,2,130,0.9922093837535014) 35%, rgba(28,50,154,1) 57%, rgba(13,19,168,1) 100%);
+    display: flex;
+    position: fixed;
+    width: 100%;
+    height: 3rem;
+    flex-direction: row;
+    z-index: 1;
+}
+
+ul {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: center;
+}
+
+button#log-out {
+    position: absolute;
+    margin-left: 89%;
+    width: 4rem;
+    height: 2rem;
+    background: inherit;
+    border-style: none;
+    cursor: pointer;
+    background: #2c5ed1;
+    border-radius: 0.5rem;
+    font-family: monospace;
+    font-size: 0.9rem;
+    top: 17%;
+    padding: 0 0.5rem;
+    width: 7rem;
+    letter-spacing: 0.1rem;
+    text-align: left;
+}
+
+ul li{
+    list-style: none;
+}
+
+
+
+button#cart{
+    position: absolute;
+    width: 6rem;
+    height: 2rem;
+    background: inherit;
+    border-style: none;
+    cursor: pointer;
+    background: #2c5ed1;
+    border-radius: 0.5rem;
+    font-family: monospace;
+    font-size: 0.9rem;
+    margin-left: 2%;
+    top: 17%;
+    letter-spacing: 0.1rem;
+    text-align: right;
+    padding: 0 0.1rem;
+}
+
+input#search{
+    position: absolute;
+    left: 48%;
+    top: 15%;
+    width: 27rem;
+    height: 2rem;
+    border-radius: 0.4rem;
+    transform: translate(-50%,-50%);
+    border: 0.1rem solid #b6aeae;
+    font-family: 'FontAwesome';
+    letter-spacing: 0.1rem;
+    font-size: 1.1rem;
+    text-align: center;
+
+}
+
+#cart:hover, #log-out:hover{
+    background-color: #3d66c4;
+    transform: scale(103%,105%);
+    transition: 0.1s;
+}
+
+i.fa-solid, i.fa-magnifying-glass{
+    position: absolute;
+    left: 62.5%;
+    top: 13.7%;
+    cursor: pointer;
+}
+
+i.fa-cart-shopping, i.fa-beat-fade::before{
+    position: absolute;
+    left: 2.4%;
+    top: 31.7%;
+    z-index: 1;
+    cursor: pointer;
+}
+
+i.fa-arrow-right-from-bracket{
+    position: absolute;
+    left: 11%;
+    left: 95.5%;
+    top: 34%;
+    cursor: pointer;
+}
+#flight-container {
+    position: absolute;
+    display: grid;
+    left: 1%;
+    top: 26%;
+    width: 99%;
+    min-height: 69vh;
+    align-content: space-evenly;
+    grid-template-columns: repeat(auto-fill, 19rem);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0rem;
+    grid-row-gap: 0.1rem;
+}
+.card {
+    position: relative;
+    width: 17rem;
+    height: 10rem;
+    border: 0.05rem solid #e5e9f0;
+    border-radius: 0.7rem;
+    box-shadow: 0px 4px 9px 3px #333;
+    list-style: none;
+    margin-top: 1rem;
+    line-height: 1.7rem;
+    letter-spacing: 0.1rem;
+    background: #e5e9f0;
+    left: 0;
+    cursor: pointer;
+    text-align: left;
+}
+
+.card:hover{
+    background: #d1d5de ;
+    transform: scale(103%, 105%);
+    transition: 0.1s;
+}
+
+p {
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+#popup{
+    position: absolute;
+    left: 34%;
+    top: 15%;
+    width: 23rem;
+    height: 16rem;
+    border: 0.1rem solid #f7f7f7f7;
+    background: #f7f7f7f7;
+    border-radius: 0.5rem;
+    text-align: center;
+    transform: scale(1.1);
+    display: flex;
+    display: none;
+}
+
+button#close {
+    position: absolute;
+    left: 90%;
+    font-size: 1.6rem;
+    border: none;
+    background: #f3f3f3f3;
+    cursor: pointer;
+    background: #df1414c7;
+    border-radius: 1.6rem;
+    width: 1.7rem;
+    height: 1.7rem;
+    text-align: center;
+    top: 2%;
+    z-index: 1;
+}
+
+button#sort-by-price {
+    position: absolute;
+    left: 45%;
+    top: 19.4%;
+    width: 5rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    background: initial;
+    border: 0.1rem solid initial;
+    border: 0.09rem solid #333;
+    cursor: pointer;
+    font-size: 0.6rem;
+    letter-spacing: 0.05rem;
+    font-family: 'Merriweather Sans';
+    box-shadow: 0px 4px 9px 3px #333;
+    
+}
+
+#sort-by-price:hover, button.addFlight:hover, button.updatePrice:hover {
+    background-color: #dfd0d0;
+    transform: scale(103%, 105%);
+    transition: 0.1s;
+
+}
+
+button.addFlight, button.updatePrice {
+    position: absolute;
+    left: 37%;
+    top: 19.4%;
+    width: 5rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    background: initial;
+    border: 0.1rem solid initial;
+    border: 0.09rem solid #333;
+    cursor: pointer;
+    font-size: 0.6rem;
+    letter-spacing: 0.05rem;
+    font-family: 'Merriweather Sans';
+    box-shadow: 0px 4px 9px 3px #333;
+}
+
+form#addNewFlight{
+    position: absolute;
+    left: 34%;
+    top: 19%;
+    width: 23rem;
+    height: 23rem;
+    border: 0.1rem solid #f7f7f7f7;
+    background: #f7f7f7f7;
+    border-radius: 0.5rem;
+    text-align: center;
+    transform: scale(1.3);
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 0px;
+    justify-content: space-between;
+    align-items: center;
+    display: none;
+}
+
+button.close{
+    position: absolute;
+    left: 92%;
+    top: 0%;
+    font-size: 2rem;
+    border: none;
+    cursor: pointer;
+    background: inherit;
+}
+
+h3 {
+    position: absolute;
+    left: 13%;
+    top: 4%;
+    letter-spacing: 0.1rem;
+    font-family: 'FontAwesome';
+    border-bottom: 0.1rem solid black;
+    color: black;
+}
+
+input#flight-depart, input#flight-arrive {
+    position: relative;
+    height: fit-content;
+    width: 10rem;
+    padding: 0.5rem 0;
+    text-align: center;
+}
+
+button.updatePrice {
+    position: absolute;
+    left: 53%;
+}
+
+#change-flight-price {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-between;
+    top: 16%;
+    left: 25%;
+}
+
+.pulsing {
+    animation:btn 2s;
+    -webkit-animation:btn 2s;
+    animation-iteration-count:infinite;
+    -webkit-animation-iteration-count:infinite;
+}
+
+@keyframes btn  {
+    0%   {color:#8c8; background-color:#000; text-shadow:0 0 9px rgba(255,255,144,0);}
+    50%  {color:#fff; background-color:#0b0; text-shadow:0 0 9px rgba(255,255,144,0.75);}
+    100% {color:#8c8; background-color:#000; text-shadow:0 0 9px rgba(255,255,144,0);}
+}
+
+@-webkit-keyframes btn {
+    0%   {color:#8c8; background-color:#000; text-shadow:0 0 9px rgba(255,255,144,0);}
+    50%  {color:#fff; background-color:#0b0; text-shadow:0 0 9px rgba(255,255,144,0.75);}
+    100% {color:#8c8; background-color:#000; text-shadow:0 0 9px rgba(255,255,144,0);}
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main | Flight Scanner</title>
+    <link rel="stylesheet" href="../CSS/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="navbar">
+        <ul>
+            <li><button id="log-out">LOG OUT</button></li>
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            <li><button id="cart">MY Cart</button></li>
+            <i class="fa-solid fa-cart-shopping fa-beat-fade"></i>
+        </ul>
+    </div>
+    <div id="search-bar">
+        <input type="search" id="search" placeholder="Search Flight">
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    <button id="sort-by-price">Sort Flight`s by Price</button>
+    <div id="flight-container">
+    </div>
+    <div id="popup">
+        <button id="close">X</button>
+        <h3>Change Flight Price</h3>
+        <form id="change-flight-price">
+            <label for="flight-from-search">Flight From:</label>
+            <input type="text" id="flight-from-search" name="flight-from-search" required><br>
+            <label for="flight-to-search">Flight To:</label>
+            <input type="text" id="flight-to-search" name="flight-to-search" required><br>
+            <label for="flight-price-change">Flight Price:</label>
+            <input type="number" id="flight-price-change" name="flight-price-change" required><br>
+            <input type="submit" value="CONFIRM"></input>
+        </form>
+    </div>
+        <form id="addNewFlight">
+            <h3>ADD New Flight Form</h3>
+            <button class="close">x</button>
+            <label for="flight-from">Flight From:</label>
+            <input type="text" id="flight-from" name="flight-from" required><br>
+            <label for="flight-to">Flight To:</label>
+            <input type="text" id="flight-to" name="flight-to" required><br>
+            <label for="flight-price">Flight Price:</label>
+            <input type="number" id="flight-price" name="flight-price" required><br>
+            <label for="flight-depart">Flight Depart:</label>
+            <input type="date" id="flight-depart" name="flight-depart" value="2023-11-12" min="2023-11-12" max="2030-12-31" required><br>
+            <label for="flight-arrive">Flight Arrive:</label>
+            <input type="date" id="flight-arrive" name="flight-arrive" value="2023-11-13" min="2023-11-13" max="2030-12-31" required><br>
+            <input type="submit" value="CONFIRM"></input>
+          </form>
+    
+    
+    <script src="../main.js" type="module"></script>
+    <script src="https://kit.fontawesome.com/26e587cf03.js" crossorigin="anonymous"></script>
+</body>
+</html>
