@@ -105,7 +105,7 @@ const flights = [
     logOut.addEventListener('click', () => {
         if(logOut){
             localStorage.clear();
-            window.location = './login.html'
+            window.location = 'login.html'
         }
     })
 
@@ -167,7 +167,7 @@ const flights = [
 
     cart.addEventListener('click', () => {
         if(cart){
-            window.location = './cart.html'
+            window.location = 'cart.html'
         }
     })
     
