@@ -30,7 +30,7 @@
 
             returnMain.addEventListener('click', () => {
                 if(returnMain){
-                    window.location = 'index.html'
+                    window.location = 'main.html'
                 }
             })
 
