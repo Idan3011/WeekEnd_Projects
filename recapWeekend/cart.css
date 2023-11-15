@@ -351,3 +351,21 @@ form#change-fly-detail h3 {
     top: 3%;
 }
 
+#good-bye {
+    position: absolute;
+    width: 26rem;
+    height: 6rem;
+    color: #f7f7f7f7;
+    top: 10%;
+    left: 1%;
+    text-align: left;
+    letter-spacing: 0.1rem;
+    font-size: 1.1rem;
+    border: 0.1rem solid #f7f7f7f7;
+}
+
+#good-bye section {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   text-decoration: underline;
+    font-size: medium;
+}

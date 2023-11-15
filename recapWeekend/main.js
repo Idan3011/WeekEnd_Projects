@@ -329,7 +329,8 @@ function addNewFlight(){
         }
 
         flights.push(newFlightObj)
-        
+
+        createFlightCard(flights)
 }
 
 //..................function for change flight price -> for admin properties..................//

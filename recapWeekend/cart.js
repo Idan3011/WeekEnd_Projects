@@ -22,6 +22,8 @@
         const flightFromDate = document.getElementById('flight-from');
         const flightToDate = document.getElementById('flight-to');
         const payup = document.getElementById('payup');
+        const goodbye = document.getElementById('good-bye')
+
         let getFlight = localStorage.getItem('cartFlight');
         const getFlightObject = JSON.parse(getFlight);
         let flightArr = [];
@@ -280,6 +282,18 @@
             })
         }
 
+//..................function for display to the user before checkout..................//         
+
+function lastStep(){
+    goodbye.innerHTML = '';
+    const byeUser = document.createElement('section');
+    byeUser.classList.add('goodBye');
+    byeUser.textContent = `${localStorage.UserName}, this is the final step, before you check out. please add the number of passenger's and select the date for your travel berfore you checkout.`
+    goodbye.appendChild(byeUser)
+
+}
+
+lastStep()
             
 
 
