@@ -137,7 +137,6 @@ const flights = [
         if(searchBar){
             searchFlight(flights);
     }
-
     })
 
 //..................eventListener for 'changeFlightPrice' button..................//
@@ -152,7 +151,7 @@ const flights = [
 
 //..................eventListener for 'close popup'..................//
 
-closePopUp.addEventListener('click',() =>{
+    closePopUp.addEventListener('click',() =>{
         if(closePopUp){
             popup.style.display = 'none'
         }
@@ -195,7 +194,7 @@ function createFlightCard(flight){
         flightCard.classList.add('card');
 
         const flightHeading = document.createElement('h2');
-        flightHeading.textContent = `${flight.to.toUpperCase()}`
+        flightHeading.textContent = `Flight to ${flight.to.toUpperCase()}`
         flightHeading.style.borderBottom = '0.05rem solid #333';
         flightHeading.style.fontSize = '1.1rem';
         flightCard.appendChild(flightHeading)
@@ -345,7 +344,7 @@ function updateFlightPrice(flight){
             flights.splice(index,1, flight)
             createFlightCard(flights)
         }  else{
-           return
+           return createFlightCard(flights)
         }      
     })
     
