@@ -22,6 +22,30 @@ body {
     z-index: 1;
 }
 
+#hello-messege section {
+    position: absolute;
+    left: 13%;
+    top: 2.4%;
+    z-index: 1;
+    font-size: 1.4rem;
+    font-family: 'Noto Serif Old Uyghur', serif;
+    letter-spacing: 0.2rem;
+    color: #f7f7f7f7;
+}
+
+.admin-properties {
+    position: absolute;
+    top: 10%;
+    left: 13%;
+    width: 10rem;
+    height: 6rem;
+    text-align: left;
+    font-family: 'Noto Serif Old Uyghur';
+    color: #f7f7f7f7;
+    letter-spacing: 0.1rem;
+    border: 0.1rem solid #f7f7f7f7;
+}
+
 ul {
     display: flex;
     align-content: center;

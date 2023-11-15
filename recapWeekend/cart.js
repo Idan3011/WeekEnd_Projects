@@ -1,4 +1,4 @@
-//...........Define Varibels...........//
+//...........................Define Varibels...........................//
 
 
         const returnMain = document.getElementById('log-out');
@@ -29,6 +29,7 @@
         
 //...............add Event Listener`s..............//
 
+//..................eventListener for 'returnMainPage' button..................//
 
             returnMain.addEventListener('click', () => {
                 if(returnMain){
@@ -36,117 +37,146 @@
                 }
             })
 
-            addPassangerForm.addEventListener('submit', (e) => {
-                    e.preventDefault()
-                    if(addPassangerForm){
-                        addPassangers(flightArr)
-                        formPopUp.style.display = 'none';
-                        
-                    }
-                })
+//..................eventListener for 'addPasssengerForm' button..................//            
 
-                closeForm.addEventListener('click', () => {
-                if(closeForm){
-                    formPopUp.style.display = 'none';
-                }
-            })
+    addPassangerForm.addEventListener('submit', (e) => {
+            e.preventDefault()
+            if(addPassangerForm){
+                addPassangers(flightArr)
+                formPopUp.style.display = 'none';
+                
+            }
+        })
 
-                addPassanger.addEventListener('click', () => {
-                    if(addPassanger){
-                        formPopUp.style.display = 'flex';
-                    }
-                })
+ //..................eventListener for 'closeForm' button..................//       
 
-                booking.addEventListener('click', () => {
-                    if(booking){
-                        ticketPopup.style.display = 'flex';
-                        getTicket(getFlightObject)
-                    }
-                })
+        closeForm.addEventListener('click', () => {
+        if(closeForm){
+            formPopUp.style.display = 'none';
+        }
+    })
 
-                closePopUp.addEventListener('click', () => {
-                    if(closePopUp){
-                        ticketPopup.style.display = 'none';
-                    }
-                })
+ //..................eventListener for 'addPassanger' button..................//       
 
-                changeDates.addEventListener('click', ()=>{
-                    if(changeDates){
-                        changeDateForm.style.display = 'flex';
-                    }
-                })
+        addPassanger.addEventListener('click', () => {
+            if(addPassanger){
+                formPopUp.style.display = 'flex';
+            }
+        })
 
-                closeDateForm.addEventListener('click', () => {
-                    if(closeDateForm){
-                        changeDateForm.style.display = 'none'
-                    }
-                })
+ //..................eventListener for 'booking' button..................//       
 
-                changeDateForm.addEventListener('submit', (e) => {
-                    e.preventDefault()
-                    if(changeDateForm){
-                        changeFlightDate(flightArr);
-                        changeDateForm.style.display = 'none'
-                    }
-                })
 
-                payup.addEventListener('click', () =>{
-                    if(payup){
-                        window.alert('Thank you for your purchase. Enjoy the trip');
-                        console.log(localStorage);
-                        ticketPopup.style.display = 'none';
-                        
-                    }
-                })
+        booking.addEventListener('click', () => {
+            if(booking){
+                ticketPopup.style.display = 'flex';
+                getTicket(getFlightObject)
+            }
+        })
+
+ //..................eventListener for 'close pop up' button..................//       
+
+
+        closePopUp.addEventListener('click', () => {
+            if(closePopUp){
+                ticketPopup.style.display = 'none';
+            }
+        })
+
+ //..................eventListener for 'change date for flight' button..................//       
+       
+
+        changeDates.addEventListener('click', ()=>{
+            if(changeDates){
+                changeDateForm.style.display = 'flex';
+            }
+        })
+
+ //..................eventListener for 'closing date form' button..................//       
+
+
+        closeDateForm.addEventListener('click', () => {
+            if(closeDateForm){
+                changeDateForm.style.display = 'none'
+            }
+        })
+
+//..................eventListener for 'change date for flight' form..................// 
+
+        changeDateForm.addEventListener('submit', (e) => {
+            e.preventDefault()
+            if(changeDateForm){
+                changeFlightDate(flightArr);
+                changeDateForm.style.display = 'none'
+            }
+        })
+
+//..................eventListener for 'check out' button..................//  
+
+        payup.addEventListener('click', () =>{
+            if(payup){
+                window.alert('Thank you for your purchase. Enjoy the trip');
+                console.log(localStorage);
+                ticketPopup.style.display = 'none';
+                
+            }
+        })
 //................Difine Function`s...................//
 
-            function objToArr(obj){
-                obj.forEach(item =>  item.forEach(element =>
-                    flightArr.push(element)))
+
+//..................function for get the vlue of the flight object..................// 
+
+        function objToArr(obj){
+            obj.forEach(item =>  item.forEach(element =>
+                flightArr.push(element)))
+            
                 
-                    
-            }
-        objToArr(getFlightObject);
-
-        function retriveFlightInfo(flightArr){
-            flightContainer.innerHTML = '';
-            flightArr.forEach(flight => {
-                const flightCard = document.createElement('button');
-                flightCard.classList.add('card');
-
-                const flightHeading = document.createElement('h2');
-                flightHeading.textContent = `${flight.to.toUpperCase()}`
-                flightHeading.style.borderBottom = '0.05rem solid #333';
-                flightHeading.style.fontSize = '1.1rem';
-                flightCard.appendChild(flightHeading)
-                
-                const fFrom = document.createElement('p');
-                fFrom.textContent = `Depart from: ${flight.from}`;
-                flightCard.appendChild(fFrom);
-
-                const fTo = document.createElement('p');
-                fTo.textContent = `Arrive To: ${flight.to}`;
-                flightCard.appendChild(fTo);
-
-                const price = document.createElement('p');
-                price.textContent = `Flight Price: ${flight.price}$`;
-                flightCard.appendChild(price);
-
-                const depart = document.createElement('p');
-                depart.textContent = `Flight Depart at: ${flight.depart}`;
-                flightCard.appendChild(depart);
-
-                const returnDate = document.createElement('p');
-                returnDate.textContent = `Flight Return at: ${flight.return}`;
-                flightCard.appendChild(returnDate);
-
-                flightContainer.appendChild(flightCard);
-
-                localStorage.setItem('flightCard', flightCard)
-            })
         }
+    objToArr(getFlightObject);
+
+//..................function for when user click on flight - the cart webPage gat the flight card from main webPage..................// 
+
+    function retriveFlightInfo(flightArr){
+        flightContainer.innerHTML = '';
+        flightArr.forEach(flight => {
+            const flightCard = document.createElement('button');
+            flightCard.classList.add('card');
+
+            const flightHeading = document.createElement('h2');
+            flightHeading.textContent = `${flight.to.toUpperCase()}`
+            flightHeading.style.borderBottom = '0.05rem solid #333';
+            flightHeading.style.fontSize = '1.1rem';
+            flightCard.appendChild(flightHeading)
+            
+            const fFrom = document.createElement('p');
+            fFrom.textContent = `Depart from: ${flight.from}`;
+            flightCard.appendChild(fFrom);
+
+            const fTo = document.createElement('p');
+            fTo.textContent = `Arrive To: ${flight.to}`;
+            flightCard.appendChild(fTo);
+
+            const price = document.createElement('p');
+            price.textContent = `Flight Price: ${flight.price}$`;
+            flightCard.appendChild(price);
+
+            const depart = document.createElement('p');
+            depart.textContent = `Flight Depart at: ${flight.depart}`;
+            flightCard.appendChild(depart);
+
+            const returnDate = document.createElement('p');
+            returnDate.textContent = `Flight Return at: ${flight.return}`;
+            flightCard.appendChild(returnDate);
+
+            flightContainer.appendChild(flightCard);
+
+            localStorage.setItem('flightCard', flightCard)
+        })
+    }
 
         retriveFlightInfo(flightArr)
+
+//..................function for when a user want to remove a flight card from is inventory..................// 
 
         function removeFlightFromCart(){
             let flightArr = [];
@@ -169,6 +199,7 @@
 
         removeFlightFromCart()
 
+//..................function for the user to add the number of traveller's.................// 
 
         function addPassangers(flight){
             
@@ -185,6 +216,8 @@
             })
 
         }
+
+//..................function for sumup all user infromation and display it for him to is confirmation..................// 
 
         function getTicket(){
             let getFlight = localStorage.getItem('cartFlight');
@@ -228,6 +261,8 @@
             }
         
         }
+
+//..................function for when a user want to change is flight date's..................// 
 
         function changeFlightDate(flight){
             let arr = [];

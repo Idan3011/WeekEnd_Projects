@@ -12,15 +12,19 @@ let isAdmin = true;
 
 
 
-//..............Setting addEventListener`s..............//
+//..................Setting addEventListener`s.................//
 
-submit.addEventListener('submit',(e) => {
-e.preventDefault();
-let isValid = true;
-if(userName.value.length<3){
-    showError(userName,"name must be at least 3 characters long." ) 
-    isValid = false;
-        }
+
+//..................eventListener for 'form submit' button..................//
+
+
+    submit.addEventListener('submit',(e) => {
+    e.preventDefault();
+    let isValid = true;
+    if(userName.value.length<3){
+        showError(userName,"name must be at least 3 characters long." ) 
+        isValid = false;
+            }
 
     const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
@@ -59,13 +63,18 @@ if(userName.value.length<3){
 
 //.................Define Function`s.................//
 
+//..................function for whent the input of the form are not validet ..................//
+
 function showError(input, massage){
     const errorDiv = document.getElementById(input.id+'Error');
     errorDiv.textContent = massage;
     input.classList.add('error')
 }
 
+//..................function for storing form input to local storage..................//
+
 function getLocalStorage(text, input){
     localStorage.setItem(text, input)
 }
+
 

@@ -63,7 +63,7 @@ const flights = [
         }
 
     ]
-
+    const messegeContainer = document.getElementById('hello-messege');
     const flightContainer = document.getElementById('flight-container');
     const cart = document.getElementById('cart');
     const popup = document.getElementById('popup');
@@ -93,6 +93,7 @@ const flights = [
 
 
 
+//............eventListener to verify that the localStorage input will upload when the page is reloading............//
 
     document.addEventListener('DOMContentLoaded', () => {        
         if(localStorage.Admin === 'true'){
@@ -101,6 +102,8 @@ const flights = [
         }
     })
 
+ //..................eventListener for 'logout' button..................// 
+    
     logOut.addEventListener('click', () => {
         if(logOut){
             localStorage.clear();
@@ -108,7 +111,8 @@ const flights = [
         }
     })
 
-   
+//..................eventListener for 'newflight' button..................// 
+    
     newFlightForm.addEventListener('submit', (e) => {
         e.preventDefault()
         
@@ -118,6 +122,8 @@ const flights = [
         }
 
     })
+//..................eventListener for closing form's..................//
+
 
     closeForm.addEventListener('click', () =>{
         if(closeForm){
@@ -125,12 +131,16 @@ const flights = [
         }
     })
 
+//..................eventListener for 'searchbar' input.................//
+
     searchBar.addEventListener('input', () =>{
         if(searchBar){
             searchFlight(flights);
     }
 
     })
+
+//..................eventListener for 'changeFlightPrice' button..................//
 
     changeFlightPrice.addEventListener('submit', (e) => {
         e.preventDefault()
@@ -140,11 +150,15 @@ const flights = [
         }
     })
 
-    closePopUp.addEventListener('click',() =>{
+//..................eventListener for 'close popup'..................//
+
+closePopUp.addEventListener('click',() =>{
         if(closePopUp){
             popup.style.display = 'none'
         }
     })
+
+//..................eventListener sorted flight button..................//
 
 
     sortFlightByPrice.addEventListener('click', () => {
@@ -162,14 +176,17 @@ const flights = [
         
     })
 
+//..................eventListener for button 'cart' to move to the next page..................//
+
     cart.addEventListener('click', () => {
         if(cart){
             window.location = 'cart.html'
         }
     })
     
-//..................Difine Function`s...................//
+//..........................Difine Function`s...........................//
 
+//..................function for creating flight card and display it in the browser...................//
 
 function createFlightCard(flight){
     flightContainer.innerHTML = '';
@@ -211,6 +228,7 @@ function createFlightCard(flight){
 }
 createFlightCard(flights)
 
+//..................function for sorted flight card by price..................//
 
 function sortedFlight(flight){
     flight.sort((a,b) => {return a.price - b.price})
@@ -218,6 +236,7 @@ function sortedFlight(flight){
     sortFlight = true    
 }
 
+//..................function for clear sorted flight card by price..................//
 
 function sortedFlightClear(flight){
         flight.sort((a,b) => {return b.price - a.price})
@@ -225,6 +244,7 @@ function sortedFlightClear(flight){
         sortFlight = false
 }
 
+//..................function for search flight by name..................//
 
 function searchFlight(flights){
     let textVal = searchBar.value.toLowerCase().toString();
@@ -238,6 +258,8 @@ function searchFlight(flights){
         }
     })
 }
+
+//..................function for admin properties(add flight, change prices for flight).................//
 
 function adminProperties(){
     const addFlight = document.createElement('button');
@@ -262,6 +284,8 @@ function adminProperties(){
         }
     })
 }
+
+//..................function for add flight -> for admin properties..................//
 
 function addNewFlight(){
 
@@ -308,6 +332,8 @@ function addNewFlight(){
         
 }
 
+//..................function for change flight price -> for admin properties..................//
+
 function updateFlightPrice(flight){
    let flightFromLower = flightFromSearch.value.toLowerCase();
    let flightToLower = flightToSearch.value.toLowerCase();
@@ -323,6 +349,8 @@ function updateFlightPrice(flight){
     })
     
 }
+
+//..................function for customer properties..................//
 
 function customerProperties(){
     let flightArr = [];
@@ -360,6 +388,27 @@ function customerProperties(){
 
 customerProperties()
 
+//..................function for greeting the costumer/admin..................//
+
+
+function helloMessege(){
+    messegeContainer.innerHTML = '';
+    
+    const user = document.createElement('section');
+    if(localStorage.Admin != 'true'){
+    user.textContent = `Hello ${localStorage.UserName}! let's choose you next flight! `
+    messegeContainer.appendChild(user);
+    } else{
+        user.textContent = `Hello ${localStorage.UserName}!`;
+        messegeContainer.appendChild(user);
+
+        const adminText = document.createElement('div');
+        adminText.classList.add('admin-properties')
+        adminText.textContent =`${localStorage.UserName}, You can add flight's & change prices as you wish!`
+        messegeContainer.appendChild(adminText)
+    }    
+}
+helloMessege()
 
 
     
