@@ -149,19 +149,19 @@ const gameGrid = grid();
 
 
 // dropItem()
-gameContainerNoClass.forEach(cell => {
-    cell.addEventListener('dragover', event => {
-      event.preventDefault();
-    });
+// gameContainerNoClass.forEach(cell => {
+//     cell.addEventListener('dragover', event => {
+//       event.preventDefault();
+//     });
   
-    cell.addEventListener('drop', event => {
-      event.preventDefault();
+//     cell.addEventListener('drop', event => {
+//       event.preventDefault();
       
       
-      if (data === 'example' && !cell.classList.length) {
-        const clonedImg = selectedImg.cloneNode(true);
-        clonedImg.style.display = 'block'; 
-        cell.appendChild(clonedImg);
-      }
-    });
-  });
+//       if (data === 'example' && !cell.classList.length) {
+//         const clonedImg = selectedImg.cloneNode(true);
+//         clonedImg.style.display = 'block'; 
+//         cell.appendChild(clonedImg);
+//       }
+//     });
+//   });
