@@ -225,6 +225,7 @@ function createFlightCard(flight){
         
     })
 }
+
 createFlightCard(flights)
 
 //..................function for sorted flight card by price..................//

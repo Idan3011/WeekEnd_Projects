@@ -1,0 +1,27 @@
+.dirt{
+    background: url('../assets/PICS/Dirt.PNG') no-repeat center center/cover;
+}
+
+.grass {
+    background: url('../assets/PICS/Grass.PNG');
+}
+
+.strongWood{
+    background: url('../assets/PICS/strongWood.PNG') no-repeat center center/cover;
+}
+
+.strongleaves {
+    background: url('../assets/PICS/strongLeaves.png') no-repeat center center/cover;
+}
+
+.woodStamp{
+    background: url('../assets/PICS/Wood.PNG') no-repeat center center/cover;
+}
+
+.leafes{
+    background: url('../assets/PICS/Leaves.PNG') no-repeat center center/cover ;
+}
+
+.stones {
+    background: url('../assets/PICS/Stone.PNG') no-repeat center center/cover;
+}

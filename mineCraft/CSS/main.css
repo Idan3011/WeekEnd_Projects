@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#game-container{
+    position: absolute;
+    max-height: 100%;
+    background: #65c6fd;
+    width: 86%;
+    height: 100vh;
+    left: 0%;
+    top: 0%;
+    display: grid;
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: repeat(20, 1fr);
+    grid-row-start: 1;
+    grid-column-start: 1;
+}
+
+#tools-container{
+    position: absolute;
+    left: 86%;
+    width: 11rem;
+    height: 100vh;
+    background: black;
+}
+
+.tools-display {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 20rem;
+    left: 29%;
+    top: 6%;
+    text-align: center;
+}
+
+.tools-display li.tools {
+    border: 0.1rem solid #f7f7f7f7;
+    width: 6rem;
+    height: 6rem;
+    font-family: 'Minecraft', sans-serif;
+    color:#f7f7f7f7;
+    list-style: none;
+    text-align: canter;
+}
+
+.pickaxe-img, .shovel-img, .axe-img {
+    position: relative;
+    width: 4rem;
+    height: 4rem;
+    left: 5%;
+    top: 8%;
+}
+
+ul.text-logo{
+    display: flex;
+    height: 25rem;
+    position: absolute;
+    left: 38%;
+    top: 5%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+ul li.text{
+    font-family: 'Minecraft', sans-serif;
+    color: #f7f7f7f7;
+    list-style-type: none;
+    z-index: 2;
+    cursor: auto;
+    
+}
+
+#item-to-pick{
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    left: 91.9%;
+    top: 63%;
+    border: 0.1rem solid #f7f7f7f7;
+    background: black;
+}
+
+#tools-container button {
+    border: none;
+    background: black;
+}
+button.pickaxe, button.shovel, button.axe {
+    z-index: 1;
+    background: none;
+    cursor: pointer;
+}
+
+#tools-container button:hover{
+    background-color: blue;
+    
+}
+
+
