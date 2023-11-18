@@ -7,3 +7,4 @@ const startButton = document.getElementById('start-game');
             window.location = './main.html'
         }
     })
+
