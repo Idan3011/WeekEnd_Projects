@@ -157,13 +157,11 @@ gameContainerNoClass.forEach(cell => {
     cell.addEventListener('drop', event => {
       event.preventDefault();
       
-      const data = event.dataTransfer.getData('text/plain'); // Get transferred data
       
-      // Check if the dropped item matches the expected data and cell has no class
       if (data === 'example' && !cell.classList.length) {
         const clonedImg = selectedImg.cloneNode(true);
-        clonedImg.style.display = 'block'; // Display the cloned image
-        cell.appendChild(clonedImg); // Append the cloned image to the cell
+        clonedImg.style.display = 'block'; 
+        cell.appendChild(clonedImg);
       }
     });
   });
