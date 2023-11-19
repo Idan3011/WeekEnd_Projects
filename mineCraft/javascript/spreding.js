@@ -4,7 +4,7 @@ import { wood as wood } from './landsacpe.js';
 import { leafes as leafes } from './landsacpe.js';
 import { stone as stone } from './landsacpe.js';
 import { cloudColector as cloudColector } from './main.js';
-import{gameContainer as gameContainer, inventory as inventory} from './main.js';
+import {gameContainer as gameContainer, inventory as inventory} from './main.js';
 import { pickaxeButton as pickaxeButton, axeButton as axeButton, shovelButton as shovelButton, itemToPick as itemToPick } from './main.js';
 import { axeOn as axeOn, shovelOn as shovelOn, pickaxeOn as pickaxeOn } from './main.js';
 
@@ -21,7 +21,7 @@ const cloudes = () => {
     }
     cloudes();
 
-const dirtSpearding = [];
+    const dirtSpearding = [];
 
 
  const dirtGenerator = () => {
@@ -37,6 +37,7 @@ const dirtSpearding = [];
 }
 
 dirtGenerator();
+
 const dirt = () => {
     dirtSpearding.forEach((dirt, i) =>{
         const dirtElement = document.createElement('div');
@@ -76,7 +77,7 @@ const grassGenerator = () => {
 }
 grassGenerator()
 
-const grass = () =>{
+export const grass = () =>{
         grassSpreding.forEach(grass => {
         const grassElement = document.createElement('div');
         grassElement.style.gridRowStart = grass.x;
@@ -98,7 +99,7 @@ const grass = () =>{
 
 grass()
 
-const StrongWood = () =>{
+export const StrongWood = () =>{
     strongWood.forEach(wood =>{
     const strongWood = document.createElement('div');
     strongWood.style.gridRowStart = wood.x;
@@ -111,7 +112,7 @@ const StrongWood = () =>{
 
 StrongWood()
 
-const strongLeaves = () =>{
+export const strongLeaves = () =>{
     strongLeave.forEach(leave =>{
         const strongleaves = document.createElement('div');
         strongleaves.style.gridRowStart = leave.x;
@@ -126,7 +127,7 @@ const strongLeaves = () =>{
 strongLeaves()
 
 
-const woods = () =>{
+export const woods = () =>{
     wood.forEach(wood =>{
         const woodStamp = document.createElement('div');
         woodStamp.style.gridRowStart = wood.x;
@@ -149,7 +150,7 @@ const woods = () =>{
 
 woods()
 
-const leafe = () =>{
+export const leafe = () =>{
     leafes.forEach(leafe =>{
         const leafes = document.createElement('div');
         leafes.style.gridRowStart = leafe.x;
@@ -170,7 +171,7 @@ const leafe = () =>{
 
 leafe()
 
-const stones = () =>{
+export const stones = () =>{
     stone.forEach(stone =>{
         const stones = document.createElement('div');
         stones.style.gridRowStart = stone.x;
@@ -202,5 +203,13 @@ function collectItems(item, val){
     }
     inventory.push(itemSlot)
 }
+export const classFunctionMap = {
+        dirt: dirt(),
+        grass: grass(),
+        woodStamp: woods(),
+        leafes: leafe(),
+        stones: stones()
+    };
 
+    console.log(classFunctionMap.dirt)
 

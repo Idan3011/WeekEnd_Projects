@@ -1,5 +1,5 @@
+import { classFunctionMap as classFunctionMap } from "./spreding.js";
 export const gameContainer = document.getElementById('game-container');
-export const gameContainerNoClass = document.querySelectorAll('#game-container>div:not([class])');
 export const pickaxeButton = document.querySelector('.pickaxe');
 export const axeButton = document.querySelector('.axe')
 export const shovelButton = document.querySelector('.shovel')
@@ -8,8 +8,13 @@ export let shovelOn = 1
 export let axeOn = 1
 export let pickaxeOn = 1
 export let inventory = [];
-let itemToPickVal = []
+let itemToPickVal = [];
 let itemName = '';
+
+document.addEventListener('DOMContentLoaded', () => {
+    console.log(classFunctionMap)
+})
+
     pickaxeButton.addEventListener('click',() => {
         if(pickaxeOn === 1){
             gameContainer.style.cursor = `url('/mineCraft/assets/CURSORS/pickaxe-min.png'), auto`;
@@ -66,21 +71,9 @@ let itemName = '';
         return itemToPickVal
       }
       
-    itemToPick.addEventListener('click', () =>{
-     inventory.forEach(item =>{
-            itemName = Object.keys(item)
-            itemToPickVal.push(itemName)
-            gameContainer.style.cursor =`url(/mineCraft/assets/CURSORS/${itemName}-min.png), auto`; 
-            axeOn =1
-            shovelOn = 1
-            pickaxeOn = 1;
-            })
-            handleItems()
-    })
     
-    
-const itemOfInentory = handleItems();
-console.log(itemOfInentory);
+
+
    
 const randX = ()=>{
     let randX = Math.ceil(Math.random()*7);
@@ -130,38 +123,69 @@ const cloudGenerator = () =>{
 const gameGrid = grid();
 
 
+itemToPick.addEventListener('click', () =>{
+    
+    inventory.forEach(item =>{
+        itemName = Object.keys(item);
+        itemToPickVal.push(itemName);
+        axeOn =1
+        shovelOn = 1
+        pickaxeOn = 1;   
+            })
+})
 
 
-// function dropItem() {
-
-//     gameContainer.addEventListener('click', () =>{
-//         const itemDrop = document.createElement('div');
-//         gameGrid.forEach(item => {
-//             if (!item.classList.length) {
-//                 itemDrop.style.gridRowStart = item.x;
-//                 itemDrop.style.gridColumnStart = item.x;
-//                 itemDrop.style.background = `url(/mineCraft/assets/CURSORS/${itemOfInentory[0]}-min.png), auto`
-//             }
-//         })
-//     })
-// }
+itemToPick.addEventListener('dragstart', function(ev) {
+    const imageURL = this.style.backgroundImage.replace(/url\(['"]?(.*?)['"]?\)/i, '$1');
+    ev.dataTransfer.setData('text', imageURL);
+});
 
 
 
-// dropItem()
-// gameContainerNoClass.forEach(cell => {
-//     cell.addEventListener('dragover', event => {
-//       event.preventDefault();
-//     });
-  
-//     cell.addEventListener('drop', event => {
-//       event.preventDefault();
-      
-      
-//       if (data === 'example' && !cell.classList.length) {
-//         const clonedImg = selectedImg.cloneNode(true);
-//         clonedImg.style.display = 'block'; 
-//         cell.appendChild(clonedImg);
-//       }
-//     });
-//   });
+gameContainer.addEventListener('dragover', function(ev) {
+    ev.preventDefault();
+});
+
+
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+        
+        gameContainer.addEventListener('drop', function(ev) {
+        ev.preventDefault();
+        const data = ev.dataTransfer.getData('text');
+        const dropCell = ev.target;
+        const backgroundColor = window.getComputedStyle(dropCell).getPropertyValue('background-color');
+
+                if (backgroundColor === 'rgba(0, 0, 0, 0)' || backgroundColor === 'rgb(0, 0, 0)') {
+                return;
+                }
+               
+            itemToPick.innerHTML = '';
+            itemToPick.style.background = ''
+            const draggedImage = document.createElement('img');
+            draggedImage.src = data;
+            draggedImage.style.width = '55px'; 
+            draggedImage.style.height = '30px'; 
+            draggedImage.style.position = 'absolute';
+            draggedImage.style.left = ev.clientX - ev.target.getBoundingClientRect().left + 'px';
+            draggedImage.style.top = ev.clientY - ev.target.getBoundingClientRect().top + 'px';
+            inventory.forEach(item =>{
+                itemName = Object.keys(item);
+               
+            draggedImage.classList.add(`${itemName}`)
+        })
+            dropCell.appendChild(draggedImage);
+            draggedImage.draggable = false;
+});
+})
+
+
+
+
+
+
+
+
+
+
